@@ -33,4 +33,11 @@ public class QuoteController {
         System.out.println(quote);
         quotes.addQuote(quote);
     }
+
+
+    @PatchMapping("/{index}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateQuote(@PathVariable int index, @RequestBody String quote) {
+        quotes.updateQuote(index, quote);
+    }
 }

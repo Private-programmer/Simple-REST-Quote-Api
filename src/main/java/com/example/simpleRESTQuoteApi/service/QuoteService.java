@@ -35,4 +35,16 @@ public class QuoteService {
 //        System.out.println(quote);
         fakeQuote.add(quote);
     }
+
+    public void updateQuote(int i, String quote) {
+        try{
+//        fakeQuote.get(i);
+        fakeQuote.remove(i);
+        fakeQuote.add(i, quote);
+
+    }
+        catch (Exception e){
+        throw e;
+    }
+    }
 }
