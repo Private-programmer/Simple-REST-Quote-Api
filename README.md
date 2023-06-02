@@ -6,3 +6,6 @@ Quick notes:
 - got it deployed to azure eventually. currently offline 
 - does not have any github acctions associated with it. 
 - may need to explore this again in the future.
+
+
+- I have attempted to add github actions to this project... Push.

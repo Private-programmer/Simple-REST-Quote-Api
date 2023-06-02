@@ -2,7 +2,9 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id "com.microsoft.azure.azurewebapp" version "1.1.0"
 }
+
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -19,4 +21,18 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+
+azurewebapp {
+	subscription = '1fb51e12-d7bb-449b-adf5-b416f8fc9050'
+	resourceGroup = 'deploy-springboot-rest-demo_group'
+	appName = 'deploy-springboot-rest-demo'
+	pricingTier = 'F1'
+	region = 'East US'
+	runtime {
+		os = 'Windows'
+		webContainer = 'Java SE'
+		javaVersion = 'Java 17'
+	}
 }
