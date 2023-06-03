@@ -36,9 +36,10 @@ jobs:
     - name: Run build with Gradle Wrapper
       run: ./gradlew build    
     - name: Run build with Gradle Wrapper
-      run: ./gradlew build    
-    - name: deploy to azure
-      run: ./gradlew azureWebAppDeploy    
+      run: ./gradlew build
+#       I think this doesn't work because it needs login for it to work.
+#     - name: deploy to azure
+#       run: ./gradlew azureWebAppDeploy    
     
         
 #     - name: Build with Gradle
