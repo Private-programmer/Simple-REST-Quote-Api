@@ -35,6 +35,11 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle Wrapper
       run: ./gradlew build    
+    - name: Run build with Gradle Wrapper
+      run: ./gradlew build    
+    - name: deploy to azure
+      run: ./gradlew azureWebAppDeploy    
+    
         
 #     - name: Build with Gradle
 #       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
