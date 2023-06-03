@@ -2,6 +2,7 @@ package com.example.simpleRESTQuoteApi.controller;
 
 
 import com.example.simpleRESTQuoteApi.service.QuoteService;
+import com.example.simpleRESTQuoteApi.thread.threadDemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,13 +11,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/quotes")
-public class QuoteController {
+public class QuoteController extends Thread{
     @Autowired
     private QuoteService quotes;
 
 
     @GetMapping()
     public List<String> getQuotes( ) {
+        threadDemo thread = new threadDemo();
+        thread.start();
         return quotes.getAllQuotes();
     }
 
@@ -38,6 +41,7 @@ public class QuoteController {
     @PatchMapping("/{index}")
     @ResponseStatus(HttpStatus.OK)
     public void updateQuote(@PathVariable int index, @RequestBody String quote) {
+
         quotes.updateQuote(index, quote);
     }
 }
